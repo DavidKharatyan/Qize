@@ -16,7 +16,6 @@
     android:layout_marginEnd="80dp"
     android:adjustViewBounds="true"
     android:src="@drawable/img_1"/>
-
     <TextView
         android:id="@+id/ChuzeTopic"
         android:layout_width="wrap_content"
@@ -27,8 +26,8 @@
         android:text="выберите виктарину "
         android:textSize="20dp"
         android:textColor="@color/white" />
-
     <LinearLayout
+        android:id="@+id/line_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ChuzeTopic"
@@ -65,8 +64,113 @@
             </TextView>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/round_back_wait_10">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/img_3">
+
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="America"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold">
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/line__2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line_1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/round_back_wait_10">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/img_4">
+
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Russia"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/round_back_wait_10">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/img_5">
+
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Ukraine"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold">
+            </TextView>
+        </LinearLayout>
 
     </LinearLayout>
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/stsrtQuizBTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line__2"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black"
+        android:backgroundTint="#00FF0A"
+        android:text="Начать викторину "
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 </RelativeLayout>
