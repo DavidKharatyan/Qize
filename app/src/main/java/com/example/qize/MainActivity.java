@@ -25,26 +25,37 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 selectedTopic = "Armenia";
+               Ukraine.setBackgroundResource(R.drawable.round_back_write_strouk10);
+                America.setBackgroundResource(R.drawable.round_back_write_strouk10);
+                Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
                 Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
             }
         });
         America.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            Ukraine.setBackgroundResource(R.drawable.round_back_write_strouk10);
             America.setBackgroundResource(R.drawable.round_back_write_strouk10);
+            Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
+            Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
         }
         });
         Russian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Ukraine.setBackgroundResource(R.drawable.round_back_write_strouk10);
+                America.setBackgroundResource(R.drawable.round_back_write_strouk10);
                 Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
-
+                Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
             }
         });
         Ukraine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Ukraine.setBackgroundResource(R.drawable.round_back_write_strouk10);
+                America.setBackgroundResource(R.drawable.round_back_write_strouk10);
+                Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
+                Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
             }
         });
         stsrtQuizBTN.setOnClickListener(new View.OnClickListener() {
@@ -55,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(MainActivity.this, "выбрать  викторину ", Toast.LENGTH_SHORT).show();
                 }else {
-                    Intentn intentn = new Intent(MainActivity.this,test.class);
-                    startActivity(intentn);
-                    finish();
-
+                    Intent intent = new Intent(MainActivity.this , QuizActivity.class);
+                intent.putExtra("seleqtedTopic",selectedTopic);
+                    startActivity(intent);
+                finish();
                 }
 
             }
