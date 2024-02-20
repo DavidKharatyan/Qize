@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final LinearLayout America = findViewById(R.id.americaLeyout);
         final LinearLayout Russian = findViewById(R.id.russiaLayout);
         final LinearLayout Ukraine = findViewById(R.id.ukraineLayout);
-        final Button stsrtQuizBTN = findViewById(R.id.stsrtQuizBTN)
+        final Button stsrtQuizBTN = findViewById(R.id.stsrtQuizBTN);
         Armenia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
