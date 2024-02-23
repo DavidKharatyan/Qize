@@ -25,38 +25,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 selectedTopic = "Armenia";
-               Ukraine.setBackgroundResource(R.drawable.round_back_write_strouk10);
-                America.setBackgroundResource(R.drawable.round_back_write_strouk10);
-                Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
-                Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
+              Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
             }
         });
         America.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Ukraine.setBackgroundResource(R.drawable.round_back_write_strouk10);
+            selectedTopic = "America";
             America.setBackgroundResource(R.drawable.round_back_write_strouk10);
-            Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
-            Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
-        }
+       }
         });
         Russian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Ukraine.setBackgroundResource(R.drawable.round_back_write_strouk10);
-                America.setBackgroundResource(R.drawable.round_back_write_strouk10);
-                Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
-                Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
+                selectedTopic = "Russian";
+               Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
             }
         });
         Ukraine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                selectedTopic = "Ukraine";
                 Ukraine.setBackgroundResource(R.drawable.round_back_write_strouk10);
-                America.setBackgroundResource(R.drawable.round_back_write_strouk10);
-                Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
-                Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
-            }
+           }
         });
         stsrtQuizBTN.setOnClickListener(new View.OnClickListener() {
             @Override
