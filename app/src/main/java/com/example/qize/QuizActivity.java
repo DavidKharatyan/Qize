@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -21,6 +23,7 @@ public class QuizActivity extends AppCompatActivity {
     private Timer quizTimer;
     private int seconds = 0;
     private int minute = 1;
+    private final List<QuestionsList> questionsLists = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +32,6 @@ public class QuizActivity extends AppCompatActivity {
         final ImageView backBtn = findViewById(R.id.backBtn);
         final TextView timer = findViewById(R.id.timer);
         final TextView selectedtopicName = findViewById(R.id.selectedtopicName);
-        question = findViewById(R.id.question);
-        questions = findViewById(R.id.questions);
         option1 = findViewById(R.id.option1);
         option2 = findViewById(R.id.option2);
         option3 = findViewById(R.id.option3);
@@ -41,7 +42,7 @@ public class QuizActivity extends AppCompatActivity {
         selectedtopicName.setText(getSelectedTopic);
     }
 
-    private void startTimer(TextView textView {
+    private void startTimer(TextView textView) {
         quizTimer = new Timer();
         quizTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -54,9 +55,26 @@ public class QuizActivity extends AppCompatActivity {
                     quizTimer.cancel();
 
                     Toast.makeText(QuizActivity.this, "время вышло ", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent();
+                    Intent intent = new Intent(QuizActivity.this, QuizResults.class);
+                    intent.putExtra("Correct",getCorrectAndwers());
+
                 }
             }
         }, 1000, 1000);
     }
+
+    private int getCorrectAndwers() {
+
+        int correctAnswers = 0;
+        for (int i = 0; i < questionsLists.size(); i++) {
+            final String grtuserSelectedAnswer = questionsLists.get(i).getUserSelectedAnswer();
+            final String getAnswer = questionsLists.get(i).getAnswer();
+
+            if (grtuserSelectedAnswer.equals(getAnswer)){
+                correctAnswers++;
+            }
+        }
+        return correctAnswers;
+    }
+
 }

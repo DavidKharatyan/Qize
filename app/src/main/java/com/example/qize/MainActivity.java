@@ -26,26 +26,38 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 selectedTopic = "Armenia";
               Armenia.setBackgroundResource(R.drawable.round_back_write_strouk10);
+              America.setBackgroundResource(R.drawable.round_back_wait_10);
+              Russian.setBackgroundResource(R.drawable.round_back_wait_10);
+              Ukraine.setBackgroundResource(R.drawable.round_back_wait_10);
             }
         });
         America.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             selectedTopic = "America";
+            Armenia.setBackgroundResource(R.drawable.round_back_wait_10);
             America.setBackgroundResource(R.drawable.round_back_write_strouk10);
-       }
+            Russian.setBackgroundResource(R.drawable.round_back_wait_10);
+            Ukraine.setBackgroundResource(R.drawable.round_back_wait_10);
+            }
         });
         Russian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectedTopic = "Russian";
-               Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
+                Armenia.setBackgroundResource(R.drawable.round_back_wait_10);
+                America.setBackgroundResource(R.drawable.round_back_wait_10);
+                Russian.setBackgroundResource(R.drawable.round_back_write_strouk10);
+                Ukraine.setBackgroundResource(R.drawable.round_back_wait_10);
             }
         });
         Ukraine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectedTopic = "Ukraine";
+                Armenia.setBackgroundResource(R.drawable.round_back_wait_10);
+                America.setBackgroundResource(R.drawable.round_back_wait_10);
+                Russian.setBackgroundResource(R.drawable.round_back_wait_10);
                 Ukraine.setBackgroundResource(R.drawable.round_back_write_strouk10);
            }
         });
