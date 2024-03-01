@@ -4,7 +4,7 @@ public class QuestionsList {
     private String option1, option2, option3, option4,question,answer;
     private String userSelectedAnswer;
 
-    public QuestionsList(String option1, String option2, String option3, String option4, String question, String answer, String userSelectedAnswer) {
+    public QuestionsList(String question,String option1, String option2, String option3, String option4,String answer, String userSelectedAnswer) {
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;

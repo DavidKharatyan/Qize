@@ -1,10 +1,12 @@
 package com.example.qize;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,9 +42,70 @@ public class QuizActivity extends AppCompatActivity {
         final String getSelectedTopic = getIntent().getStringExtra("selectedTopic");
 
         selectedtopicName.setText(getSelectedTopic);
-    }
+        startTimer(timer);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quizTimer.purge();
+                quizTimer.cancel();
 
-    private void startTimer(TextView textView) {
+                startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+        option1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quizTimer.purge();
+                quizTimer.cancel();
+
+                startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+        option2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quizTimer.purge();
+                quizTimer.cancel();
+
+                startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+        option3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quizTimer.purge();
+                quizTimer.cancel();
+
+                startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+        option4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quizTimer.purge();
+                quizTimer.cancel();
+
+                startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+        nextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quizTimer.purge();
+                quizTimer.cancel();
+
+                startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                finish();
+            }
+        });
+
+    }
+    private void startTimer(TextView timetextView) {
         quizTimer = new Timer();
         quizTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -56,9 +119,29 @@ public class QuizActivity extends AppCompatActivity {
 
                     Toast.makeText(QuizActivity.this, "время вышло ", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(QuizActivity.this, QuizResults.class);
-                    intent.putExtra("Correct",getCorrectAndwers());
+                    intent.putExtra("Correct", getCorrectAndwers());
+                    intent.putExtra("incorrect", getInCorrectAndwers());
 
+                    startActivity(intent);
+                    finish();
+                } else {
+                    seconds--;
                 }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        String finalMinutes = String.valueOf(minute);
+                        String finalSeconds = String.valueOf(seconds);
+
+                        if (finalMinutes.length() == 1) {
+                            finalMinutes = "0" + finalMinutes;
+                        }
+                        if (finalSeconds.length() == 1) {
+                            finalSeconds = "0" + finalSeconds;
+                        }
+                        timetextView.setText(finalMinutes + ":" + finalSeconds);
+                    }
+                });
             }
         }, 1000, 1000);
     }
@@ -67,10 +150,24 @@ public class QuizActivity extends AppCompatActivity {
 
         int correctAnswers = 0;
         for (int i = 0; i < questionsLists.size(); i++) {
-            final String grtuserSelectedAnswer = questionsLists.get(i).getUserSelectedAnswer();
+            final String grtUserSelectedAnswer = questionsLists.get(i).getUserSelectedAnswer();
             final String getAnswer = questionsLists.get(i).getAnswer();
 
-            if (grtuserSelectedAnswer.equals(getAnswer)){
+            if (grtUserSelectedAnswer.equals(getAnswer)) {
+                correctAnswers++;
+            }
+        }
+        return correctAnswers;
+    }
+
+    private int getInCorrectAndwers() {
+
+        int correctAnswers = 0;
+        for (int i = 0; i < questionsLists.size(); i++) {
+            final String grtUserSelectedAnswer = questionsLists.get(i).getUserSelectedAnswer();
+            final String getAnswer = questionsLists.get(i).getAnswer();
+
+            if (!grtUserSelectedAnswer.equals(getAnswer)) {
                 correctAnswers++;
             }
         }
