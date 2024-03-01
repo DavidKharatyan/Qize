@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,7 +26,9 @@ public class QuizActivity extends AppCompatActivity {
     private Timer quizTimer;
     private int seconds = 0;
     private int minute = 1;
-    private final List<QuestionsList> questionsLists = new ArrayList<>();
+    private List<QuestionsList> questionsLists;
+    private int cureQuestionPosition = 0;
+    private String selectedOptionByUser = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,13 @@ public class QuizActivity extends AppCompatActivity {
 
         selectedtopicName.setText(getSelectedTopic);
         startTimer(timer);
+        questions.setText((cureQuestionPosition + 1) + "/" + questionsLists.size());
+        question.setText(questionsLists.get(0).getQuestion());
+        option1.setText(questionsLists.get(0).getOption1());
+        option2.setText(questionsLists.get(0).getOption2());
+        option3.setText(questionsLists.get(0).getOption3());
+        option4.setText(questionsLists.get(0).getOption4());
+        questionsLists = QuestionsBank.getQuestions(getSelectedTopic);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,11 +66,13 @@ public class QuizActivity extends AppCompatActivity {
         option1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                quizTimer.purge();
-                quizTimer.cancel();
-
-                startActivity(new Intent(QuizActivity.this, MainActivity.class));
-                finish();
+                if (selectedOptionByUser.isEmpty()) {
+                    selectedOptionByUser = option1.getText().toString();
+                    option1.setBackgroundResource(R.drawable.round_back_red10);
+                    option1.setTextColor(Color.WHITE);
+                    revialAnswer();
+                    questionsLists.get(cureQuestionPosition).setUserSelectedAnswer(selectedOptionByUser);
+                }
             }
         });
         option2.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +117,7 @@ public class QuizActivity extends AppCompatActivity {
         });
 
     }
+
     private void startTimer(TextView timetextView) {
         quizTimer = new Timer();
         quizTimer.scheduleAtFixedRate(new TimerTask() {
@@ -174,4 +187,21 @@ public class QuizActivity extends AppCompatActivity {
         return correctAnswers;
     }
 
+    private void revialAnswer() {
+        final String getAnswer = questionsLists.get(cureQuestionPosition).getAnswer();
+        if (option1.getText().toString().equals(getAnswer)) {
+            option1.setBackgroundResource(R.drawable.round_back_green10);
+            option1.setTextColor(Color.WHITE);
+        } else if (option2.getText().toString().equals(getAnswer)) {
+            option2.setBackgroundResource(R.drawable.round_back_green10);
+            option2.setTextColor(Color.WHITE);
+        } else if (option3.getText().toString().equals(getAnswer)) {
+            option3.setBackgroundResource(R.drawable.round_back_green10);
+            option3.setTextColor(Color.WHITE);
+        }
+        else if (option4.getText().toString().equals(getAnswer)) {
+            option4.setBackgroundResource(R.drawable.round_back_green10);
+            option4.setTextColor(Color.WHITE);
+        }
+    }
 }

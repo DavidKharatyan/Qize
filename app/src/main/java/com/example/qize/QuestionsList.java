@@ -41,4 +41,8 @@ public class QuestionsList {
     public String getUserSelectedAnswer() {
         return userSelectedAnswer;
     }
+
+    public void setUserSelectedAnswer(String userSelectedAnswer) {
+        this.userSelectedAnswer = userSelectedAnswer;
+    }
 }
