@@ -68,10 +68,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (selectedTopic.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "выбрать  викторину ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "выберите тему викторины ", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(MainActivity.this, QuizActivity.class);
-                    intent.putExtra("seleqtedTopic", selectedTopic);
+                    intent.putExtra("selectedTopic", selectedTopic);
                     startActivity(intent);
                 }
 

@@ -64,7 +64,7 @@
         android:elevation="1dp"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        android:text="3/10"
+        android:text="5/10"
         android:textColor="@color/black" />
 
     <TextView
@@ -78,7 +78,7 @@
         android:gravity="center"
         android:minHeight="100dp"
         android:padding="20dp"
-        android:text="Какое государственное строение существует в Армении?"
+        android:text="Какое озеро расположено на территории Армении?"
         android:textColor="@color/black"
         android:textSize="16dp" />
 
@@ -90,7 +90,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Парламентская республика"
+        android:text="Каспийское море"
         android:textColor="@color/black"
         />
 
@@ -102,7 +102,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Абсолютная монархия"
+        android:text="Ванское озеро"
         android:textColor="@color/black"
         />
 
@@ -114,7 +114,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Тоталитаризм"
+        android:text="Байкал"
         android:textColor="@color/black"
         />
 
@@ -126,11 +126,11 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Католицизм"
+        android:text="Непал"
         android:textColor="@color/black"
         />
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextBtn3"
+        android:id="@+id/nextBtn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"

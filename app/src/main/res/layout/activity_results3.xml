@@ -64,7 +64,7 @@
         android:elevation="1dp"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        android:text="2/10"
+        android:text="4/10"
         android:textColor="@color/black" />
 
     <TextView
@@ -78,7 +78,7 @@
         android:gravity="center"
         android:minHeight="100dp"
         android:padding="20dp"
-        android:text="Какая религия преобладает в Армении?"
+        android:text="Какой город является столицей Армении?"
         android:textColor="@color/black"
         android:textSize="16dp" />
 
@@ -90,7 +90,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Ислам"
+        android:text="Тбилиси"
         android:textColor="@color/black"
         />
 
@@ -102,7 +102,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Христианство"
+        android:text="Баку"
         android:textColor="@color/black"
         />
 
@@ -114,7 +114,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Православие"
+        android:text="Астана "
         android:textColor="@color/black"
         />
 
@@ -126,7 +126,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Католицизм"
+        android:text="Ереван"
         android:textColor="@color/black"
         />
     <androidx.appcompat.widget.AppCompatButton

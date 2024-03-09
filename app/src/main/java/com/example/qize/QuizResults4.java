@@ -15,10 +15,10 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class QuizResuits extends AppCompatActivity {
+public class QuizResults4 extends AppCompatActivity {
     private TextView questions;
     private TextView question;
-    private String selectedTopic = "Armenian";
+    private String selectedTopic = "";
     private AppCompatButton option1, option2, option3, option4;
 
     private AppCompatButton nextBtn;
@@ -32,7 +32,7 @@ public class QuizResuits extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.activity_results4);
         final ImageView backBtn = findViewById(R.id.backBtn);
         final TextView timer = findViewById(R.id.timer);
         final TextView selectedtopicName = findViewById(R.id.selectedtopicName);
@@ -47,18 +47,18 @@ public class QuizResuits extends AppCompatActivity {
         startTimer(timer);
         //questions.setText((cureQuestionPosition + 1) + "/" + questionsLists.size());
         //question.setText(questionsLists.get(0).getQuestion());
-      //  option1.setText(questionsLists.get(0).getOption1());
-    //    option2.setText(questionsLists.get(0).getOption2());
-  //      option3.setText(questionsLists.get(0).getOption3());
+        //  option1.setText(questionsLists.get(0).getOption1());
+        //    option2.setText(questionsLists.get(0).getOption2());
+        //      option3.setText(questionsLists.get(0).getOption3());
 //        option4.setText(questionsLists.get(0).getOption4());
-   //  questionsLists = QuestionsBank.getQuestions(getSelectedTopic);
+        //  questionsLists = QuestionsBank.getQuestions(getSelectedTopic);
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 quizTimer.purge();
                 quizTimer.cancel();
 
-                startActivity(new Intent(QuizResuits.this, MainActivity.class));
+                startActivity(new Intent(QuizResults4.this, MainActivity.class));
                 finish();
             }
         });
@@ -104,12 +104,11 @@ public class QuizResuits extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (selectedTopic.isEmpty()){
                 final String getSelectedTopic = getIntent().getStringExtra("selectedTopic");
-                    Intent intent = new Intent(QuizResuits.this,QuizResults2 .class);
-                    intent.putExtra("selectedTopic", selectedTopic);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(QuizResults4.this, MainActivity.class);
+                intent.putExtra("selectedTopic", selectedTopic);
+                startActivity(intent);
+
             }
         });
 
@@ -127,8 +126,8 @@ public class QuizResuits extends AppCompatActivity {
                     quizTimer.purge();
                     quizTimer.cancel();
 
-                    Toast.makeText(QuizResuits.this, "время вышло ", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(QuizResuits.this,QuizResults2 .class);
+                    Toast.makeText(QuizResults4.this, "время вышло ", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(QuizResults4.this, MainActivity.class);
                     intent.putExtra("Correct", getCorrectAndwers());
                     intent.putExtra("incorrect", getInCorrectAndwers());
 
@@ -195,8 +194,7 @@ public class QuizResuits extends AppCompatActivity {
         } else if (option3.getText().toString().equals(getAnswer)) {
             option3.setBackgroundResource(R.drawable.round_back_green10);
             option3.setTextColor(Color.WHITE);
-        }
-        else if (option4.getText().toString().equals(getAnswer)) {
+        } else if (option4.getText().toString().equals(getAnswer)) {
             option4.setBackgroundResource(R.drawable.round_back_green10);
             option4.setTextColor(Color.WHITE);
         }

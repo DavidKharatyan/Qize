@@ -23,7 +23,7 @@
         android:layout_below="@id/quizIcone"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="20dp"
-        android:text="выберите виктарину "
+        android:text="выберите тему викторины "
         android:textSize="20dp"
         android:textColor="@color/white" />
     <LinearLayout
@@ -58,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Армениа"
+                android:text="Армения"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold">
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Рассия"
+                android:text="Россия"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold">
