@@ -57,16 +57,15 @@
     <TextView
         android:id="@+id/cuestions"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_back_wait_10"
         android:elevation="1dp"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        android:text="1/10"
-        android:textColor="@color/black"
-/>
+        android:text="3/10"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/cuestion"
@@ -79,7 +78,7 @@
         android:gravity="center"
         android:minHeight="100dp"
         android:padding="20dp"
-        android:text="Какой язык является официальным в Армении?"
+        android:text="Какое государственное строение существует в Армении?"
         android:textColor="@color/black"
         android:textSize="16dp" />
 
@@ -91,7 +90,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Турецкий"
+        android:text="Парламентская республика"
         android:textColor="@color/black"
         />
 
@@ -103,7 +102,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Русский"
+        android:text="Абсолютная монархия"
         android:textColor="@color/black"
         />
 
@@ -115,7 +114,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Армянский"
+        android:text="Тоталитаризм"
         android:textColor="@color/black"
         />
 
@@ -127,7 +126,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_back_wait_stroke2_10"
-        android:text="Греческий"
+        android:text="Католицизм"
         android:textColor="@color/black"
         />
     <androidx.appcompat.widget.AppCompatButton

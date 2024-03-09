@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, QuizActivity.class);
                     intent.putExtra("seleqtedTopic", selectedTopic);
                     startActivity(intent);
-                    finish();
                 }
 
             }

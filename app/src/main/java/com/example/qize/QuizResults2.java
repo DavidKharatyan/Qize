@@ -1,9 +1,5 @@
 package com.example.qize;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,15 +8,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class QuizActivity extends AppCompatActivity {
+public class QuizResults2 extends AppCompatActivity {
     private TextView questions;
     private TextView question;
-    private String selectedTopic = "";
+    private String selectedTopic = "Armenian";
     private AppCompatButton option1, option2, option3, option4;
 
     private AppCompatButton nextBtn;
@@ -60,7 +58,7 @@ public class QuizActivity extends AppCompatActivity {
                 quizTimer.purge();
                 quizTimer.cancel();
 
-                startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                startActivity(new Intent(QuizResults2.this, MainActivity.class));
                 finish();
             }
         });
@@ -68,10 +66,10 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (selectedOptionByUser.isEmpty()) {
-                    option1.setBackgroundResource(R.drawable.round_back_red10);
+                    option1.setBackgroundResource(R.drawable.round_back_green10);
                     option2.setBackgroundResource(R.drawable.round_back_wait_10);
                     option3.setBackgroundResource(R.drawable.round_back_wait_10);
-                    option4.setBackgroundResource(R.drawable.round_back_green10);
+                    option4.setBackgroundResource(R.drawable.round_back_wait_10);
 
                 }
             }
@@ -79,37 +77,39 @@ public class QuizActivity extends AppCompatActivity {
         option2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                option1.setBackgroundResource(R.drawable.round_back_wait_10);
+                option1.setBackgroundResource(R.drawable.round_back_green10);
                 option2.setBackgroundResource(R.drawable.round_back_red10);
-                option3.setBackgroundResource(R.drawable.round_back_green10);
+                option3.setBackgroundResource(R.drawable.round_back_wait_10);
                 option4.setBackgroundResource(R.drawable.round_back_wait_10);
             }
         });
         option3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                option1.setBackgroundResource(R.drawable.round_back_wait_10);
+                option1.setBackgroundResource(R.drawable.round_back_green10);
                 option2.setBackgroundResource(R.drawable.round_back_wait_10);
-                option3.setBackgroundResource(R.drawable.round_back_green10);
+                option3.setBackgroundResource(R.drawable.round_back_red10);
                 option4.setBackgroundResource(R.drawable.round_back_wait_10);
             }
         });
         option4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                option1.setBackgroundResource(R.drawable.round_back_wait_10);
+                option1.setBackgroundResource(R.drawable.round_back_green10);
                 option2.setBackgroundResource(R.drawable.round_back_wait_10);
-                option3.setBackgroundResource(R.drawable.round_back_green10);
+                option3.setBackgroundResource(R.drawable.round_back_wait_10);
                 option4.setBackgroundResource(R.drawable.round_back_red10);
             }
         });
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String getSelectedTopic = getIntent().getStringExtra("selectedTopic");
-                    Intent intent = new Intent(QuizActivity.this,QuizResuits .class);
+                if (selectedTopic.isEmpty()) {
+                    final String getSelectedTopic = getIntent().getStringExtra("selectedTopic");
+                    Intent intent = new Intent(QuizResults2.this, MainActivity.class);
                     intent.putExtra("selectedTopic", selectedTopic);
                     startActivity(intent);
+                }
             }
         });
 
@@ -127,8 +127,8 @@ public class QuizActivity extends AppCompatActivity {
                     quizTimer.purge();
                     quizTimer.cancel();
 
-                    Toast.makeText(QuizActivity.this, "время вышло ", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(QuizActivity.this, QuizResuits.class);
+                    Toast.makeText(QuizResults2.this, "время вышло ", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(QuizResults2.this, MainActivity.class);
                     intent.putExtra("Correct", getCorrectAndwers());
                     intent.putExtra("incorrect", getInCorrectAndwers());
 
